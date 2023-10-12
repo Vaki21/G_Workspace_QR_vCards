@@ -102,7 +102,7 @@ namespace AdminSDKDirectoryQuickstart
                     if (userItem.Organizations != null) { vCard.Title = userItem.Organizations[0].Title; }
 
                     vCard.EmailAddresses.Add(new vCardEmailAddress(userItem.PrimaryEmail, vCardEmailAddressType.Internet));
-                    vCard.Organization = "Greyson";
+                    vCard.Organization = "";
                     vCard.Websites.Add(new vCardWebsite(""));
 
                     //Assign a number if user has one
