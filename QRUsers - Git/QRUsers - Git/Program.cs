@@ -108,65 +108,44 @@ namespace AdminSDKDirectoryQuickstart
                     //Assign a number if user has one
                     if (userItem.Phones != null) { vCard.Phones.Add(new vCardPhone(userItem.Phones[0].Value)); }
 
+                    vCardDeliveryAddress address = new vCardDeliveryAddress();
+                    address.Street = "";
+                    address.City = "";
+                    //address.PostalCode = "";
+                    //address.Country = "Slovakia";
+
+                    vCardDeliveryAddress address1 = new vCardDeliveryAddress();
+                    address1.Street = "";
+                    address1.City = "";
+                    //address1.PostalCode = "";
+                    //address1.Country = "Czechia";
+
                     //Assigns Address based on Phone number Country code
                     if (userItem.Phones != null)
                     {
                         //Slovakia Address
                         if (userItem.Phones[0].Value.Contains("+421"))
                         {
-                            vCardDeliveryAddress address = new vCardDeliveryAddress();
-                            address.Street = "";
-                            address.City = "";
-                            //address.PostalCode = "";
-                            //address.Country = "";
                             vCard.DeliveryAddresses.Add(address);
                         }
                         //Czech Address
                         else if (userItem.Phones[0].Value.Contains("+420"))
                         {
-                            vCardDeliveryAddress address1 = new vCardDeliveryAddress();
-                            address1.Street = "";
-                            address1.City = "";
-                            //address1.PostalCode = "";
-                            //address1.Country = "";
                             vCard.DeliveryAddresses.Add(address1);
                         }
                         //If User doesnt have Czech/Slovak country code, assign both
                         else
                         {
-                            vCardDeliveryAddress address = new vCardDeliveryAddress();
-                            address.Street = "";
-                            address.City = "";
-                            //address.PostalCode = "";
-                            //address.Country = "";
                             vCard.DeliveryAddresses.Add(address);
-
-                            vCardDeliveryAddress address1 = new vCardDeliveryAddress();
-                            address1.Street = "";
-                            address1.City = "";
-                            //address1.PostalCode = "";
-                            //address1.Country = "";
                             vCard.DeliveryAddresses.Add(address1);
                         }
                     }
                     //If user doesnt have a phone number, assign both addresses
                     else
                     {
-                        vCardDeliveryAddress address = new vCardDeliveryAddress();
-                        address.Street = "";
-                        address.City = "";
-                        //address.PostalCode = "";
-                        //address.Country = "";
                         vCard.DeliveryAddresses.Add(address);
-
-                        vCardDeliveryAddress address1 = new vCardDeliveryAddress();
-                        address1.Street = "";
-                        address1.City = "";
-                        //address1.PostalCode = "";
-                        //address1.Country = "";
                         vCard.DeliveryAddresses.Add(address1);
-                    }
-                    
+                    }   
                     /*
                     // Takes address from Google Admin, wasn't worth it in my case
                     if (userItem.Addresses != null)
