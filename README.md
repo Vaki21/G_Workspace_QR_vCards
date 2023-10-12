@@ -1,7 +1,7 @@
 # G_Workspace_QR_vCards
 Takes user data (Contacts) from Google Workspace, generates QR Code vCards and uploads them to a server.
 
-As Google Workspace Admin I needed to assign QR Code vCards to e-mail signatures. In order to save time I made this code to fetch the needed data from GWS.
+As a Google Workspace Admin I needed to assign QR Code vCards to e-mail signatures. In order to save time I made this code to fetch the needed data from GWS.
 Thought many Admins might want to do the same so heres the whole project.
 
 User data it works with: Name, Surname, Position, work e-mail, work number, office address. I also wanted to take user profile picture but couldn't make it work.
